@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Convertitore</title>
+<meta charset="utf-8">
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+
+<label for="uno">Bottone</label>
+<input id="uno" value="hello" onclick="appendHello(this);">
+
+<div>
+<select onchange="convert(this);">
+	<option selected>-</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</select>
+</div>
+
+<label for="target">Traduzione</label><br>
+<div>
+<input type="text" id="target" readonly>
+</div>
+
+<script>
+
+
+function convert(elem) {
+	let target = document.getElementById('target');
+	let value = elem.selectedOptions[0].value;
+	
+	
+	switch(value){
+	case '1':
+		target.value = 'one';
+		break;
+	case '2':
+		target.value = 'two';
+		break;
+	case '3':
+		target.value = 'three';
+		break;
+	case '4':
+		target.value = 'four';
+		break;
+	case '5':
+		target.value = 'five';
+		break;
+	default:
+		target.value='none';
+	}
+	
+	//console.log(target);
+}
+
+function appendHello(elem) {
+	elem.value+='hello';
+	
+}
+
+</script>
+
+</body>
+</html>

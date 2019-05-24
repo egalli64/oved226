@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(function(){
+let divs=$('div');
+let risultato=document.getElementById('target');
+risultato.value=divs.length;
+$('<div>Hello</div>').css({border: '1px solid black'}).appendTo('body');
+//override del comportamento dei link in una pagina
+$('a').click(function(event) {
+alert("You should not use any link on this page!");
+event.preventDefault();
+});
+});
+</script>
+<title>jqueriProva</title>
+</head>
+<body>
+
+<div>
+<p>Questo è un paragrafo</p>
+</div>
+
+<div>
+<dl>
+		<dt>alfa<img src="https://www.museodelmarchioitaliano.it/marchi/img/alfa-romeo/marchio-alfa-romeo-02.jpg" alt="logo" height="200" /></dt>
+		<dd>la prima lettera dell'alfabeto greco</dd>
+		<dd>Una gran bella casa automobilistica</dd>
+	</dl>
+</div>
+
+<div>
+<select onchange="convert(this);">
+	<option selected>-</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</select>
+</div>
+
+<div>
+<select onchange="convert(this);">
+	<option selected>-</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	</select>
+</div>
+
+<div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22364.2043395497!2d9.321000183118844!3d45.51962886249091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c829fdd96ef7%3A0x2de7e5288a9c0464!2s20063+Cernusco+sul+Naviglio+MI!5e0!3m2!1sit!2sit!4v1558355835178!5m2!1sit!2sit" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+
+
+<label for="target"><a href='elemento.html'>Traduzione</a></label><br>
+<input type="text" id="target" readonly>
+
+</body>
+</html>
