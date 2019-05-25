@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Workers</title>
+</head>
+<body>
+<h1>Projects</h1>
+
+<div th:each="project: ${projects}">
+    <h2 th:text="${project.name}">Wotan</h2>
+
+    <div th:each="cur: ${project.participants}">
+        <p th:text="|${cur.id}: ${cur.name}|">1: Tom Smith</p>
+    </div>
+</div>
+
+    <hr>
+
+    <h1>Projects</h1>
+
+    <div th:each="participant: ${participants}">
+        <h2 th:text="${participant.name}">Bill Ewing</h2>
+
+        <div th:each="cur: ${participant.projects}">
+            <p th:text="|${cur.id}: ${cur.name}|">1: Manhattan</p>
+            <p th:text="${cur.id} + ': ' + ${cur.name}">1: Manhattan</p>
+        </div>
+    </div>
+</body>
+</html>

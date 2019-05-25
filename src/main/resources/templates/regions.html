@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Regions</title>
+</head>
+<body>
+    <p>
+        Plain regions as string: <span th:text=" ${regions}">[]</span>
+    </p>
+
+    <p>Plain regions in table</p>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+        </tr>
+        <tr th:each="cur: ${regions}">
+            <td th:text="${cur.id}">1</td>
+            <td th:text="${cur.name}">Europe</td>
+        </tr>
+    </table>
+
+    <p>Regions 1TM in tables</p>
+    <div th:each="region: ${regions1tm}">
+        <p>
+            <span th:text="${region.id}">1</span>: <span th:text="${region.name}">Europe</span>
+        </p>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+            </tr>
+            <tr th:each="cur: ${region.countries}">
+                <td th:text="${cur.id}">IT</td>
+                <td th:text="${cur.name}">Italy</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

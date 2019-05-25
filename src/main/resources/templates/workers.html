@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Workers</title>
+</head>
+<body>
+    <p>
+        Workers as string: <span th:text=" ${workers}">[]</span>
+    </p>
+
+    <p>Workers in table</p>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>WORKSTATION</th>
+        </tr>
+        <tr th:each="cur: ${workers}">
+            <td th:text="${cur.id}">1</td>
+            <td th:text="${cur.name}">Guido van Rossum</td>
+            <td th:text="${cur.workstation.name}">LovelySpam</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <p>
+        Workstations as string: <span th:text=" ${workstations}">[]</span>
+    </p>
+
+    <p>Workstations in table</p>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>WORKER</th>
+        </tr>
+        <tr th:each="cur: ${workstations}">
+            <td th:text="${cur.id}">1</td>
+            <td th:text="${cur.name}">LovelySpam</td>
+            <td th:text="${cur.worker.name}">Guido van Rossum</td>
+        </tr>
+    </table>
+
+</body>
+</html>
