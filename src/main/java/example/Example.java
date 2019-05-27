@@ -54,6 +54,30 @@ public class Example {
 	 */
 	public int largestMultCouple(int[] values) {
 		
-		return Integer.MIN_VALUE;
+		int tmp1=0;
+		int tmp2=0;
+		int result1;
+		int result2;
+		for(int i=0;i<values.length;i++) {
+			if(values[i]>=tmp1) {
+				tmp2=tmp1;
+				tmp1=values[i];
+			}
+		}
+		int tmp3=0;
+		int tmp4=0;
+		for(int i=0;i<values.length;i++) {
+			if(values[i]<=tmp3) {
+				tmp4=tmp3;
+				tmp3=values[i];
+			}
+		}
+		
+		result1=tmp1*tmp2;
+		result2=tmp3*tmp4;
+		if(result1>result2) {
+		return result1;
+		}
+		return result2;
 	}
 }
