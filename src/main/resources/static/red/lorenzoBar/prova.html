@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<input value="hello">
+<script type="text/javascript">
+let data = [1, 'hello', [true, 42.24]];
+console.log(data.length);
+console.log(data[1], data[2][1]);
+data[2] = false;
+for(let i = 0; i < data.length; i++) {
+console.log(data[i]);
+}
+console.log(data.join(), data.toString());
+data.pop();
+console.log(data);
+data.shift();
+console.log(data);
+data.push('push');
+data.unshift('unshift');
+data.push(77);
+console.log(data);
+let abba= 42 == '42';
+console.log(abba);
+	</script>
+</body>
+</html>

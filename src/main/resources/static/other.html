@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+input:hover {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<input value="hello" onclick="appendHello(this);">
+	<input id="idX" value="hello" onclick="appendHello();">
+
+	<div>
+		<select onchange="convert(this);">
+			<option>-</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+	</div>
+	<div>
+		<label>As string:
+			<input value="ciao!" id="target" readonly>
+		</label>
+	</div>
+
+	<script>
+		function convert(elem) {
+			let target = document.getElementById('target');
+						
+			target.value = elem.selectedOptions[0].value;
+		}
+	
+		let data = [ 1, 'hello', [ true, 42.24 ] ];
+		console.log(data.length);
+		console.log(data[1], data[2][1]);
+		data[2] = false;
+		for (let i = 0; i < data.length; i++) {
+			console.log(data[i]);
+		}
+		console.log(data.join(), data.toString());
+		data.pop();
+		data.shift();
+		data.push('push');
+		data.unshift('unshift');
+	</script>
+</body>
+</html>

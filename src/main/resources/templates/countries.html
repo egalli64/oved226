@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Countries</title>
+</head>
+<body>
+	<p>
+		Countries ManyToOne as string: <span th:text=" ${countriesMT1}">[]</span>
+	</p>
+
+	<p>Countries ManyToOne</p>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>REGION</th>
+		</tr>
+		<tr th:each="cur: ${countriesMT1}">
+			<td th:text="${cur.id}">IT</td>
+			<td th:text="${cur.name}">Italy</td>
+			<td th:text="${cur.region.name}">Europe</td>
+		</tr>
+	</table>
+</body>
+</html>
